@@ -2,17 +2,33 @@
 //  ImageCarouselView.swift
 //  TestFormat_taskSwiftUi
 //
-//  Created by Aritipamula Kotaiah on 04/04/25.
+//  Created by Vemuluri Manoj on 04/04/25.
 //
 
 import SwiftUI
 
+// MARK: - Image Carousel
 struct ImageCarouselView: View {
+    let imageNames : String
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+        ProductImageView(imageUrl: imageNames)
+               
+            
+//            ForEach(imageNames, id: \..self) { imageName in
+//                ProductImageView(imageUrl: imageName)
+//                Image(imageName)
+//                    .resizable()
+//                    .scaledToFit()
+//            }
+        }
+        .frame(width: 300, height: 300)
+        .tabViewStyle(PageTabViewStyle())
     }
 }
 
-#Preview {
-    ImageCarouselView()
-}
+//#Preview {
+//    ImageCarouselView()
+//}
